@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "BayesianTorchModels"
+version = "0.1.0"
+description = "Modular Bayesian model framework in PyTorch"
+authors = [
+  { name = "Pak Lun Kevin Cheung", email = "pcheung4@wisc.edu" }
+]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "torchdiffeq",
+]
+
+[project.urls]
+Homepage = "https://github.com/kc-111/BayesianTorchModels"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/BayesianTorchModels"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
